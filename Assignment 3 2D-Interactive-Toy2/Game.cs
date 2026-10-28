@@ -12,23 +12,45 @@ namespace MohawkGame2D
     {
        //Variables 
         Color bg = new Color(255, 245, 238);
+        Color BGstrip = new Color(65, 105, 225);
         Color BasketballBrown = new Color("B54213");
         Color BackboardRed = new Color("B23A32");
         Color HoopRim = new Color("EE6730");
         Color Shadow = new Color(255, 229, 180, 20);
         Color BannerBG = new Color("4F7942");
         Color BannerSymbol = new Color("7C3030");
-        int score = 0;
+      //object1 = new ();
+      //object2 = new ();
+      //object3 = new ();
+        //int score = 0;
+        /// <summary>
+        /// //////////////
+        /// </summary>
         public void Setup()
         {
+            //Add the Window size and title name
+            Window.SetSize(800, 600);
+            Window.SetTitle("Hoop to the Hoop");
+
+            //add the objects 
+            //object1.Setup();
+            //object2.Setup();
+            //object3.Setup();
+
 
         }
-
         /// <summary>
-        ///     Update runs every frame.
+        /// Updates the current state or values of the object.
         /// </summary>
         public void Update()
         {
+            //Draw the "Color bg" for the background 
+            Window.ClearBackground(bg);
+
+            //Draw the "BG Strip" at the bottom of the background 
+            Draw.LineSize = 0;
+            Draw.FillColor = BGstrip;
+            Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
 
         }
     }
