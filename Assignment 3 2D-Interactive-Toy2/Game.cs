@@ -53,9 +53,9 @@ namespace MohawkGame2D
             Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
             //////////////
             ///
-            //Backboard for the Basketball Hoop 
-            //Draw the wires attachted to the Basketball Hoop
+            //Backboard for the Basketball Hoop    
             {
+                //Draw the wires attachted to the Basketball Hoop
                 float y = 0;
                 Draw.LineSize = 7;
                 Draw.Line(new Vector2(300, y), new Vector2(300, 100));
@@ -69,6 +69,28 @@ namespace MohawkGame2D
                 Draw.Line(new Vector2(400, y), new Vector2(500, 75));
                 Draw.FillColor = Color.Black;
                 Draw.Circle(400f, 110f, 15f);
+
+                //Draw the Backboard 
+                //Draw the first rectangle, make it white
+                Draw.LineSize = 1f;
+                Draw.FillColor = Color.White;
+                Draw.Rectangle(new Vector2(250, 100), new Vector2(300, 200));
+                //Draw the second rectangle, make it red
+                Draw.LineSize = 1f;
+                Draw.FillColor = BackboardRed;
+                Draw.Rectangle(new Vector2(270, 120), new Vector2(260, 160));
+                //Third rectangle, make it white
+                Draw.LineSize = 1f;
+                Draw.FillColor = Color.White;
+                Draw.Rectangle(new Vector2(280, 130), new Vector2(240, 140));
+                //Fourth rectangle, make it red
+                Draw.LineSize = 1f;
+                Draw.FillColor = BackboardRed;
+                Draw.Rectangle(new Vector2(340, 190), new Vector2(120, 80));
+                //fifth rectangle, make it white
+                Draw.LineSize = 1f;
+                Draw.FillColor = Color.White;
+                Draw.Rectangle(new Vector2(350, 200), new Vector2(100, 60));
             }
 
         }
