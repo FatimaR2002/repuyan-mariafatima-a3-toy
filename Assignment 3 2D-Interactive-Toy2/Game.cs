@@ -18,6 +18,7 @@ namespace MohawkGame2D
         Color Shadow = new Color(255, 229, 180, 20);
         Color BannerBG = new Color("4F7942");
         Color BannerSymbol = new Color("7C3030");
+        int score = 0;
         public void Setup()
         {
 
