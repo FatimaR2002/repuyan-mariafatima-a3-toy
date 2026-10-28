@@ -12,11 +12,15 @@ namespace MohawkGame2D
     {
         //Variables
         Color bg = new Color(255, 245, 238);
-        Color BasketballBrown = new Color("#EE6730");
+        Color BasketballBrown = new Color("#b54213");
         Color BasketballBlack = new Color("#2c2c2c");
+        Color HoopRed = new Color("#B23A32");
+        Color HoopRim = new Color("#EE6730");
         public void Setup()
         {
-            
+            //Add title and Window Size
+            Window.SetTitle("Hoop to the Hoop");
+            Window.SetSize(800, 600);
         }
 
         /// <summary>
@@ -24,10 +28,6 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
         {
-            //Add title and Window Size
-            Window.SetTitle("Hoop to the Hoop");
-            Window.SetSize(800, 600);
-
             //Add background colour, make it tan/beige 
             Window.ClearBackground(bg);
 
@@ -36,7 +36,7 @@ namespace MohawkGame2D
             Draw.SetFillColor(65, 105, 225);
             Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
 
-            
+
             { //Making the Hoop
                 Draw.LineSize = 1;
                 Draw.FillColor = Color.White;
@@ -66,13 +66,22 @@ namespace MohawkGame2D
                 Draw.PolyLine(new Vector2(330, 280), new Vector2(340, 300), new Vector2(350, 310), new Vector2(355.5f, 350), new Vector2(355.5f, 370), new Vector2(350, 420));
             }
 
-           
-              
+            {
+                //Prepare drawing variables for the basketball 
+                float x = Input.GetMouseX();
+                float y = Input.GetMouseY();
 
-
-
-
+                //Draw basketball at mouse position
+                DrawHoop(x, y, BasketballBrown, BasketballBlack);
+            }
+            void DrawHoop(float x, float y, Color BasketballBrown, Color BasketballBlack)
+            {
+                Draw.LineSize = (0);
+                Draw.FillColor = BasketballBrown;
+                //body of the basketball
+                Draw.Circle(Input.GetMouseX(), Input.GetMouseY(), 45);
+            }
         }
-    }
 
+    }
 }
