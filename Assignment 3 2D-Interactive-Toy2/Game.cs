@@ -13,6 +13,7 @@ namespace MohawkGame2D
        //Variables 
         Color bg = new Color(255, 245, 238);
         Color BGstrip = new Color(65, 105, 225);
+        Color BGCushion = new Color(44, 72, 148);
         Color BasketballBrown = new Color("B54213");
         Color BackboardRed = new Color("B23A32");
         Color HoopRim = new Color("EE6730");
@@ -23,6 +24,7 @@ namespace MohawkGame2D
       //object2 = new ();
       //object3 = new ();
         //int score = 0;
+
         /// <summary>
         /// //////////////
         /// </summary>
@@ -51,6 +53,11 @@ namespace MohawkGame2D
             Draw.LineSize = 0;
             Draw.FillColor = BGstrip;
             Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
+            //Draw the "Bg Cushions" at below the BG Strip 
+            Draw.LineSize = 0;
+            Draw.FillColor = BGCushion;
+            Draw.Rectangle(new Vector2(0, 480), new Vector2(800, 130));
+
             //////////////
             ///
             //Backboard for the Basketball Hoop    
@@ -92,8 +99,22 @@ namespace MohawkGame2D
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(350, 200), new Vector2(100, 60));
             }
+            ////////////////
+            ////
+            ///Rectangle for Tally Chart 
+            Draw.LineSize = 3;
+            Draw.FillColor = Color.OffWhite;
+            Draw.Rectangle(new Vector2(40, 410), new Vector2(210, 120));
+            ///////////////
+            ////
+            ///Loop 1: Window Shadows 
+            
+            
+
+            
 
         }
     }
 
 }
+
