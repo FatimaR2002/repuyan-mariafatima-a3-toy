@@ -37,28 +37,44 @@ namespace MohawkGame2D
             Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
 
 
-            { //Making the Hoop
-                Draw.LineSize = 1;
+            {
+                //Draw the Wires attachted to the Basketball Hoop
+                float y = 0;
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(300, y), new Vector2(300, 100));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(500, y), new Vector2(500, 100));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(300, 80), new Vector2(500, 80));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(400, y), new Vector2(300, 75));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(400, y), new Vector2(500, 75));
+                Draw.FillColor = Color.Black;
+                Draw.Circle(400f, 110f, 15f);
+
+                //Making the Hoop
+                Draw.LineSize = 1f;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(250, 100), new Vector2(300, 200));
                 //Draw the first border
-                Draw.LineSize = 1;
-                Draw.FillColor = Color.Red;
+                Draw.LineSize = 1f;
+                Draw.FillColor = HoopRed;
                 Draw.Rectangle(new Vector2(270, 120), new Vector2(260, 160));
                 //Second border
-                Draw.LineSize = 1;
+                Draw.LineSize = 1f;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(280, 130), new Vector2(240, 140));
                 //Third border
-                Draw.LineSize = 1;
-                Draw.FillColor = Color.Red;
+                Draw.LineSize = 1f;
+                Draw.FillColor = HoopRed;
                 Draw.Rectangle(new Vector2(340, 190), new Vector2(120, 80));
                 //Fourth border
-                Draw.LineSize = 1;
+                Draw.LineSize = 1f;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(350, 200), new Vector2(100, 60));
                 //Draw Hoop
-                Draw.LineSize = 0.5f;
+                Draw.LineSize = 1f;
                 Draw.FillColor = Color.Magenta;
                 Draw.Rectangle(new Vector2(330, 260), new Vector2(140, 20));
                 //Draw the net
