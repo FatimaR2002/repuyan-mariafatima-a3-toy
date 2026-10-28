@@ -51,6 +51,25 @@ namespace MohawkGame2D
             Draw.LineSize = 0;
             Draw.FillColor = BGstrip;
             Draw.Rectangle(new Vector2(0, 450), new Vector2(800, 30));
+            //////////////
+            ///
+            //Backboard for the Basketball Hoop 
+            //Draw the wires attachted to the Basketball Hoop
+            {
+                float y = 0;
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(300, y), new Vector2(300, 100));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(500, y), new Vector2(500, 100));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(300, 80), new Vector2(500, 80));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(400, y), new Vector2(300, 75));
+                Draw.LineSize = 7;
+                Draw.Line(new Vector2(400, y), new Vector2(500, 75));
+                Draw.FillColor = Color.Black;
+                Draw.Circle(400f, 110f, 15f);
+            }
 
         }
     }
