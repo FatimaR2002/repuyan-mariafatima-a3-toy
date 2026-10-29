@@ -18,8 +18,8 @@ namespace MohawkGame2D
         public void Update()
         {
             //HoopNet
-            Draw.LineSize = 4;
-            Draw.LineColor = Color.White;
+            Draw.LineSize = 2.5f;
+            Draw.LineColor = Color.Black;
             Draw.Line(new Vector2(400, 330), new Vector2(450, 260));
             Draw.Line(new Vector2(400, 330), new Vector2(350, 260));
             Draw.Line(new Vector2(380, 300), new Vector2(360, 370));
@@ -29,7 +29,7 @@ namespace MohawkGame2D
             Draw.Line(new Vector2(370, 400), new Vector2(360, 380));
             Draw.Line(new Vector2(430, 400), new Vector2(440, 380));
             Draw.Line(new Vector2(370, 400), new Vector2(390, 430));
-            Draw.Line(new Vector2(360,410), new Vector2(370,430));
+            Draw.Line(new Vector2(360, 410), new Vector2(370, 430));
             Draw.Line(new Vector2(370, 430), new Vector2(360, 410));
             Draw.Line(new Vector2(370, 430), new Vector2(380, 410));
             Draw.Line(new Vector2(440, 380), new Vector2(410, 430));
@@ -37,6 +37,12 @@ namespace MohawkGame2D
             Draw.Line(new Vector2(400, 410), new Vector2(390, 430));
             Draw.Line(new Vector2(440, 410), new Vector2(430, 430));
             Draw.Line(new Vector2(430, 430), new Vector2(420, 410));
+            Draw.Line(new Vector2(400, 410), new Vector2(380, 370));
+            Draw.Line(new Vector2(400, 410), new Vector2(420, 370));
+            Draw.Line(new Vector2(380, 370), new Vector2(370, 330));
+            Draw.Line(new Vector2(420, 370), new Vector2(430, 330));
+            Draw.Line(new Vector2(370, 330), new Vector2(340, 300));
+            Draw.Line(new Vector2(430, 330), new Vector2(460, 300));
 
             //HoopRim 
             Draw.LineSize = 1;
@@ -45,8 +51,8 @@ namespace MohawkGame2D
             Draw.Rectangle(new Vector2(330, 260), new Vector2(140, 20));
 
             //Net Outline
-            Draw.LineSize = 4f;
-            Draw.LineColor = Color.White;
+            Draw.LineSize = 2.5f;
+            Draw.LineColor = Color.Black;
             Draw.PolyLine(new Vector2(330, 280), new Vector2(340, 300), new Vector2(350, 330), new Vector2(360, 370), new Vector2(360, 410), new Vector2(350, 430));
             Draw.PolyLine(new Vector2(470, 280), new Vector2(460, 300), new Vector2(450, 330), new Vector2(440, 370), new Vector2(440, 410), new Vector2(450, 430));
         }

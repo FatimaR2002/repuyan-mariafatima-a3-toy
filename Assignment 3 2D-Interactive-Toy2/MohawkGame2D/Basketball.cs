@@ -34,7 +34,7 @@ namespace MohawkGame2D
             {
                 input.X = 1;
             }
-            if(Input.IsKeyboardKeyDown(KeyboardKey.W))
+            if (Input.IsKeyboardKeyDown(KeyboardKey.W))
             {
                 input.Y = -1;
             }
@@ -42,16 +42,16 @@ namespace MohawkGame2D
             {
                 input.Y = 1;
             }
-            position += input *200f* Time.DeltaTime;
+            position += input * 200f * Time.DeltaTime;
 
             Draw.LineSize = 1;
             Draw.FillColor = BasketballBrown;
-            Draw.Circle(position,36);
+            Draw.Circle(position, 39);
         }
 
-     public void Functions()
+        public void Functions()
         {
-    
+
         }
 
     }

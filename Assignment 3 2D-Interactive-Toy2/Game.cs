@@ -2,31 +2,23 @@
 using System;
 using System.Numerics;
 
-// The namespace your code is in.
 namespace MohawkGame2D
 {
-    /// <summary>
-    ///     Your game code goes inside this class!
-    /// </summary>
+
     public class Game
     {
-       //Variables 
+        //Variables 
         public Color bg = new Color("EDEADE");
         public Color BGstrip = new Color(65, 105, 225);
         public Color BGCushion = new Color(44, 72, 148);
         public Color BackboardRed = new Color("B23A32");
         public Color Shadow = new Color(255, 229, 180, 30);
-        public Color BannerBG = new Color("4F7942");
-        public Color BannerSymbol = new Color("7C3030");
 
-        /// <summary>
-        /// /////
-        /// </summary>
-        /// 
         //objects    
         Hoop object2 = new Hoop();
         Basketball object1 = new Basketball();
-       int score = 0;
+        Banner object3 = new Banner();
+        int score = 0;
         bool justscored = false;
 
         /// <summary>
@@ -39,6 +31,7 @@ namespace MohawkGame2D
             Window.SetTitle("Hoop to the Hoop");
             object1.Setup();
             object2.Setup();
+            object3.Setup();
         }
         /// <summary>
         /// Updates the current state or values of the object.
@@ -80,27 +73,27 @@ namespace MohawkGame2D
 
                 //Draw the Backboard 
                 //Draw the first rectangle, make it white
-                Draw.LineSize = 1f;
+                Draw.LineSize = 2f;
                 Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(250, 100), new Vector2(300, 200));
                 //Draw the second rectangle, make it red
-                Draw.LineSize = 1f;
+                Draw.LineSize = 2f;
                 Draw.LineColor = Color.Black;
                 Draw.FillColor = BackboardRed;
                 Draw.Rectangle(new Vector2(270, 120), new Vector2(260, 160));
                 //Third rectangle, make it white
-                Draw.LineSize = 1f;
+                Draw.LineSize = 2f;
                 Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(280, 130), new Vector2(240, 140));
                 //Fourth rectangle, make it red
-                Draw.LineSize = 1f;
+                Draw.LineSize = 2f;
                 Draw.LineColor = Color.Black;
                 Draw.FillColor = BackboardRed;
                 Draw.Rectangle(new Vector2(340, 190), new Vector2(120, 80));
                 //fifth rectangle, make it white
-                Draw.LineSize = 1f;
+                Draw.LineSize = 2f;
                 Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(350, 200), new Vector2(100, 60));
@@ -127,19 +120,20 @@ namespace MohawkGame2D
             ////
             ///Loop 2: Tally Chart
             for (int i = 0; i < score; i++)
-               
+
             {
                 Draw.LineSize = 3;
                 //X and Y coordinates, move every 30 pixels, each time the player gets the basketball into the hoop
                 int x = i * 20;
                 //Draw the line
-                Draw.Line(new Vector2(x + 100,430), new Vector2(x + 50,510));
+                Draw.Line(new Vector2(x + 100, 430), new Vector2(x + 50, 510));
             }
             /////////////
             ///
             //Classes Update 
             object1.Update();
             object2.Update();
+            object3.Update();
 
             ///////
             ///
@@ -153,13 +147,13 @@ namespace MohawkGame2D
                 }
             }
             //reset the net after the player scores 
-            if(object1.position.X > 500) justscored = false;
-                    
+            if (object1.position.X > 500) justscored = false;
+
 
         }
 
-        }
     }
+}
 
 
 
