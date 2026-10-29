@@ -11,18 +11,21 @@ namespace MohawkGame2D
     public class Game
     {
        //Variables 
-        Color bg = new Color("EDEADE");
-        Color BGstrip = new Color(65, 105, 225);
-        Color BasketballBrown = new Color("B54213");
-        Color HoopRim = new Color("EE6730");
-        Color BGCushion = new Color(44, 72, 148);
-        Color BackboardRed = new Color("B23A32");
-        Color Shadow = new Color(255, 229, 180, 30);
-        Color BannerBG = new Color("4F7942");
-        Color BannerSymbol = new Color("7C3030");
-        //Basketball object1 = new Basketball();
-        //Hoop object2 = new Hoop();
-      //object3 = new ();
+        public Color bg = new Color("EDEADE");
+        public Color BGstrip = new Color(65, 105, 225);
+        public Color BGCushion = new Color(44, 72, 148);
+        public Color BackboardRed = new Color("B23A32");
+        public Color Shadow = new Color(255, 229, 180, 30);
+        public Color BannerBG = new Color("4F7942");
+        public Color BannerSymbol = new Color("7C3030");
+
+        /// <summary>
+        /// /////
+        /// </summary>
+        /// 
+        //objects    
+        Hoop object2 = new Hoop();
+        Basketball object1 = new Basketball();
        //int score = 0;
 
         /// <summary>
@@ -33,13 +36,8 @@ namespace MohawkGame2D
             //Add the Window size and title name
             Window.SetSize(800, 600);
             Window.SetTitle("Hoop to the Hoop");
-
-            //add the objects 
-            //object1.Setup();
-            //object2.Setup();
-            //object3.Setup();
-
-
+            object1.Setup();
+            object2.Setup();
         }
         /// <summary>
         /// Updates the current state or values of the object.
@@ -133,23 +131,12 @@ namespace MohawkGame2D
             /////////////
             ///
             /// Basketball
-            {
-                Draw.LineSize = 1f;
-                Draw.FillColor = BasketballBrown;
-                Draw.Circle(Input.GetMouseX(), Input.GetMouseY(), 45);
-            }
+          
+            object1.Update();
+            object2.Update();
 
-            ///////////
-            ///
-            ///HoopRim
-            {
-                Draw.LineSize = 1f;
-                Draw.FillColor = BasketballBrown;
-                Draw.Rectangle(new Vector2(330, 260), new Vector2(140, 20));
-            }
-            
 
-            
+
 
         }
     }
