@@ -26,7 +26,8 @@ namespace MohawkGame2D
         //objects    
         Hoop object2 = new Hoop();
         Basketball object1 = new Basketball();
-       //int score = 0;
+       int score = 0;
+        bool justscored = false;
 
         /// <summary>
         /// //////////////
@@ -64,6 +65,7 @@ namespace MohawkGame2D
                 //Draw the wires attachted to the Basketball Hoop
                 float y = 0;
                 Draw.LineSize = 7;
+                Draw.LineColor = Color.Black;
                 Draw.Line(new Vector2(300, y), new Vector2(300, 100));
                 Draw.LineSize = 7;
                 Draw.Line(new Vector2(500, y), new Vector2(500, 100));
@@ -79,22 +81,27 @@ namespace MohawkGame2D
                 //Draw the Backboard 
                 //Draw the first rectangle, make it white
                 Draw.LineSize = 1f;
+                Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(250, 100), new Vector2(300, 200));
                 //Draw the second rectangle, make it red
                 Draw.LineSize = 1f;
+                Draw.LineColor = Color.Black;
                 Draw.FillColor = BackboardRed;
                 Draw.Rectangle(new Vector2(270, 120), new Vector2(260, 160));
                 //Third rectangle, make it white
                 Draw.LineSize = 1f;
+                Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(280, 130), new Vector2(240, 140));
                 //Fourth rectangle, make it red
                 Draw.LineSize = 1f;
+                Draw.LineColor = Color.Black;
                 Draw.FillColor = BackboardRed;
                 Draw.Rectangle(new Vector2(340, 190), new Vector2(120, 80));
                 //fifth rectangle, make it white
                 Draw.LineSize = 1f;
+                Draw.LineColor = Color.Black;
                 Draw.FillColor = Color.White;
                 Draw.Rectangle(new Vector2(350, 200), new Vector2(100, 60));
             }
@@ -119,7 +126,8 @@ namespace MohawkGame2D
             ///////////////
             ////
             ///Loop 2: Tally Chart
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < score; i++)
+               
             {
                 Draw.LineSize = 3;
                 //X and Y coordinates, move every 30 pixels, each time the player gets the basketball into the hoop
@@ -127,19 +135,31 @@ namespace MohawkGame2D
                 //Draw the line
                 Draw.Line(new Vector2(x + 100,430), new Vector2(x + 50,510));
             }
-
             /////////////
             ///
-            /// Basketball
-          
+            //Classes Update 
             object1.Update();
             object2.Update();
 
+            ///////
+            ///
+            //Get a score if the basketball goes through the net
+            if (object1.position.X > 380 && object1.position.X < 420)
+            {
+                if (object1.position.Y > 410 && object1.position.Y < 420 && justscored == false)
+                {
+                    score++;
+                    justscored = true;
+                }
+            }
+            //reset the net after the player scores 
+            if(object1.position.X > 500) justscored = false;
+                    
 
-
+        }
 
         }
     }
 
-}
+
 
