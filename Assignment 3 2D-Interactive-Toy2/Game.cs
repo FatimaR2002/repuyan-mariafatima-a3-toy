@@ -11,19 +11,19 @@ namespace MohawkGame2D
     public class Game
     {
        //Variables 
-        Color bg = new Color(255, 245, 238);
+        Color bg = new Color("EDEADE");
         Color BGstrip = new Color(65, 105, 225);
-        Color BGCushion = new Color(44, 72, 148);
         Color BasketballBrown = new Color("B54213");
-        Color BackboardRed = new Color("B23A32");
         Color HoopRim = new Color("EE6730");
-        Color Shadow = new Color(255, 229, 180, 20);
+        Color BGCushion = new Color(44, 72, 148);
+        Color BackboardRed = new Color("B23A32");
+        Color Shadow = new Color(255, 229, 180, 30);
         Color BannerBG = new Color("4F7942");
         Color BannerSymbol = new Color("7C3030");
-      //object1 = new ();
-      //object2 = new ();
+        //Basketball object1 = new Basketball();
+        //Hoop object2 = new Hoop();
       //object3 = new ();
-        //int score = 0;
+       //int score = 0;
 
         /// <summary>
         /// //////////////
@@ -48,6 +48,7 @@ namespace MohawkGame2D
         {
             //Draw the "Color bg" for the background 
             Window.ClearBackground(bg);
+
 
             //Draw the "BG Strip" at the bottom of the background 
             Draw.LineSize = 0;
@@ -108,7 +109,37 @@ namespace MohawkGame2D
             ///////////////
             ////
             ///Loop 1: Window Shadows 
-            
+            for (int i = 0; i < 4; i++)
+            {
+                Draw.LineSize = 0;
+                Draw.FillColor = Shadow;
+                //Y Coordinate, make it go down the y-axis every 30 pixels 
+                int y = i * 30;
+                //Draw a Quad that moves down y-axis every 30 pixels 
+                Draw.Quad(new Vector2(0, y), new Vector2(900, y + 670), new Vector2(650, y + 670), new Vector2(0, y + 60));
+            }
+            ///////////////
+            ////
+            ///Loop 2: Tally Chart
+            ///
+
+            /////////////
+            ///
+            /// Basketball
+            {
+                Draw.LineSize = 1f;
+                Draw.FillColor = BasketballBrown;
+                Draw.Circle(Input.GetMouseX(), Input.GetMouseY(), 45);
+            }
+
+            ///////////
+            ///
+            ///HoopRim
+            {
+                Draw.LineSize = 1f;
+                Draw.FillColor = BasketballBrown;
+                Draw.Rectangle(new Vector2(330, 260), new Vector2(140, 20));
+            }
             
 
             
