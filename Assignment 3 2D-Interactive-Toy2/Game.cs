@@ -121,7 +121,14 @@ namespace MohawkGame2D
             ///////////////
             ////
             ///Loop 2: Tally Chart
-            ///
+            for (int i = 0; i < 7; i++)
+            {
+                Draw.LineSize = 3;
+                //X and Y coordinates, move every 30 pixels, each time the player gets the basketball into the hoop
+                int x = i * 20;
+                //Draw the line
+                Draw.Line(new Vector2(x + 100,430), new Vector2(x + 50,510));
+            }
 
             /////////////
             ///
